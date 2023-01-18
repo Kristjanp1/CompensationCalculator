@@ -1,0 +1,55 @@
+h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+p, ol {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+ol{
+  list-style-type: none;
+}
+ol > li > p {
+  position: relative;
+  margin-left: 24px;
+}
+ol > li {
+  position: relative;
+}
+
+.counter-first {
+  position: absolute;
+  height: 4px;
+  top: 45%;
+  width: 16px;
+  background: linear-gradient(90deg, #911812 0%, #E1261C 100%);
+}
+
+.counter-second {
+  position: absolute;
+  top: 45%;
+  height: 4px;
+  width: 12px;
+  background: linear-gradient(90deg, #D3DAE8 0%, #A7B7D8 100%);
+}
+
+em {
+  color: rgba(225, 38, 28, 1)
+}

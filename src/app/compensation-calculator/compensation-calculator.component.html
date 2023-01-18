@@ -1,0 +1,102 @@
+<aside
+  class="calc-container"
+>
+  <div class="container-lg">
+    <div class="calc-content">
+      <div class="row">
+        <div class="col-lg-12 mb-3">
+          <div class="title">
+            <h4>Compensation Calculator</h4>
+          </div>
+        </div>
+        <form [formGroup]="compensationForm" class="compensation-form">
+          <div class="alert alert-danger"
+               *ngIf="(compensationForm.controls['incomeForm'].invalid || compensationForm.controls['sickDaysForm'].invalid) && isSubmitted">
+            <div *ngIf="compensationForm.controls['incomeForm'].errors?.['required']">
+              Income is required
+            </div>
+            <div *ngIf="compensationForm.controls['incomeForm'].errors?.['min']">
+              Not a valid income
+            </div>
+            <div *ngIf="compensationForm.controls['sickDaysForm'].errors?.['required']">
+              The amount of sick days is required
+            </div>
+            <div *ngIf="compensationForm.controls['sickDaysForm'].errors?.['max']">
+              The maximum amount of sick days is exceeded
+            </div>
+            <div *ngIf="compensationForm.controls['sickDaysForm'].errors?.['min']">
+              Not a valid amount of sick days
+            </div>
+          </div>
+          <div class="col-lg-12 position-relative">
+            <label for="income">Average Income</label>
+            <span class="input-value-type">€</span>
+            <input
+              class="text-input form-control"
+              [(ngModel)]="incomeValue"
+              (ngModelChange)="onFormChange()"
+              formControlName="incomeForm"
+              id="income"
+              type="number"
+              value="1500"
+              required
+            >
+          </div>
+          <div class="col-lg-12 position-relative">
+            <label for="sick-days">Days on sick-leave</label>
+            <span class="input-value-type">days</span>
+            <input
+              [(ngModel)]="sickDaysValue"
+              (ngModelChange)="onFormChange()"
+              class="text-input form-control"
+              id="sick-days"
+              formControlName="sickDaysForm"
+              type="number"
+              value="7"
+              required
+            >
+          </div>
+          <div class="col-md-12 checkbox mt-1">
+
+            <label class="checkbox-container"> I have tuberculosis
+              <input type="checkbox" (click)="toggleHasTuberculosis()">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <button
+            type="button"
+            class="btn-calculate my-3"
+            (click)="submitForm()"
+          >
+            Calculate
+          </button>
+        </form>
+      </div>
+      <hr>
+      <div class="row text-section">
+        <div class="col-md-6 text-center">
+          <p>The employer compensates
+            <br><strong> {{this.compensationResults?.employerDays || 0}} days</strong>
+          </p>
+          <h5>{{this.compensationResults?.employerCompensation || 0 | number: '1.2-2'}}€</h5>
+          <span> Daily allowance <br> {{((this.compensationResults?.employerCompensation || 0) / (this.compensationResults?.employerDays || 1))  | number: '1.2-2'}}€ </span>
+
+        </div>
+        <div class="col-md-6 text-center">
+          <p>Health Insurance compensates
+            <br><strong>{{this.compensationResults?.insuranceDays || 0}} days</strong>
+          </p>
+          <h5> {{this.compensationResults?.insuranceCompensation || 0 | number: '1.2-2'}}€</h5>
+          <span> Daily allowance <br> {{((this.compensationResults?.insuranceCompensation || 0) / (this.compensationResults?.insuranceDays || 1))  | number: '1.2-2'}}€ </span>
+        </div>
+      </div>
+      <hr>
+      <div class="row text-section mt-4">
+        <div class="col-md-12 text-section">
+          <p><strong>Compensation total for 7 days(net)</strong></p>
+          <h3><strong>{{this.compensationResults?.compensationTotal || 0  | number: '1.2-2'}}€</strong></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

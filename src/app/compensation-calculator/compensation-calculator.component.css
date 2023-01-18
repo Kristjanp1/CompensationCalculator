@@ -1,0 +1,159 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc-container {
+  width: 340px;
+  height: 800px;
+  background: #FFFFFF;
+}
+
+.title h4 {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 25px;
+  letter-spacing: -0.02em;
+}
+
+.calc-content {
+  padding: 60px 20px 100px 20px;
+}
+
+.compensation-form label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.compensation-form input {
+  margin-bottom: 20px;
+  padding: 10px
+}
+
+.compensation-form .input-value-type {
+  position: absolute;
+  right: 15px;
+  top: 33px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.compensation-form .checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.compensation-form .checkbox .checkmark {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: linear-gradient(white, white) padding-box, linear-gradient(90deg, rgba(211, 218, 232, 1) 0%, rgba(167, 183, 216, 1) 100%) border-box;
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 5px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #3F4756;
+  border-width: 0 3px 3px 0;
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.checkbox input:hover ~ .checkmark {
+  background-color: #ccc;
+}
+
+.calc-content .text-input {
+  font-weight: 700;
+  font-size: 18px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(white, white) padding-box, linear-gradient(90deg, rgba(211, 218, 232, 1) 0%, rgba(167, 183, 216, 1) 100%) border-box;
+}
+
+.btn-calculate {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  display: flex;
+  padding: 20px 40px;
+  text-shadow: 2px 2px #2B303A;
+  background: linear-gradient(90deg, #911812 0%, #E1261C 100%);
+  border: none;
+  border-radius: 30px;
+}
+
+.text-section {
+  text-align: center;
+  font-style: normal;
+}
+
+.text-section span {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #7A818E;
+}
+
+.text-section p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+.text-section h5 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.text-section h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
