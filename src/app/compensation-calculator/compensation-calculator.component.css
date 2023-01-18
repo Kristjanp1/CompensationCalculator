@@ -8,6 +8,13 @@ input::-webkit-inner-spin-button {
   width: 340px;
   height: 800px;
   background: #FFFFFF;
+  inset: 0;
+  clip-path: polygon(0 26.00px, 26.00px 0, calc(100% - 26.00px) 0, 100% 26.00px, 100% calc(100% - 26.00px),
+  calc(100% - 26.00px) 100%, 26.00px 100%, 0 calc(100% - 26.00px), 0 26.00px, 300px calc(26.00px + 124.26px),
+  300px calc(100% - 26.00px - 124.26px), calc(26.00px + 124.26px) calc(100% - 300px),
+  calc(100% - 26.00px - 124.26px) calc(100% - 300px), calc(100% - 300px) calc(100% - 26.00px - 124.26px),
+  calc(100% - 300px) calc(26.00px + 124.26px), calc(100% - 26.00px - 124.26px) 300px,
+  calc(26.00px + 124.26px) 300px, 300px calc(26.00px + 124.26px));
 }
 
 .title h4 {
